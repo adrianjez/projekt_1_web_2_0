@@ -1,5 +1,5 @@
 /**
- * Created by jankrolikowski on 17.04.2017.
+ * Created by adrianjez on 24.05.2017.
  */
 var nodemailer = require('nodemailer');
 
