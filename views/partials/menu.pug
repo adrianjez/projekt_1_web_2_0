@@ -1,0 +1,23 @@
+div.menu
+    br
+    a(href = '/') #{'Strona główna'}
+    p.line
+    if !user
+        a(href = '/users/register') Rejestracja
+        br
+        a(href = '/users/login') Logowanie
+        p.line
+    a(href = '/feedback') #{'Wyślij pytanie'}
+    if user
+        p.line
+        div Menu widoczne po zalogowaniu:
+        a(href = '/articles/') #{'Lista Produktów'}
+        br
+        a(href = '/articles/add') Dodaj produkt
+        br
+        br
+        a(href = '/users/logout') #{'Wyloguj'}
+        if user.admin
+            p.line
+            div Menu widoczne tylko dla administratora:
+            a(href = '/notifications/') #{'Lista wiadomości'}

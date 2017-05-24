@@ -1,0 +1,22 @@
+extends ../base_template
+block content
+    div.button
+        a(href="/articles/add") Dodaj nowy Product
+    div
+        h1 Lista Artykułów:
+        if !produkty || !produkty.length
+            div brak samochodów!
+
+        for produkt, i  in produkty
+            ul Artykuł o indeksie nr #{i + 1 }
+                li Kategoria: #{produkt.category}
+                li Nazwa: #{produkt.name}
+                li Title: #{produkt.title}
+                li Priorytet: #{produkt.priority}
+                li Aktywny #{produkt.active ? "Tak" : "Nie"}
+                li Opcje:
+                    ul
+                        li
+                            a(href="/articles/" + produkt.id) Edytuj
+                        li
+                            a(href="/articles/delete/" + produkt.id ) Usuń

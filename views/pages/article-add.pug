@@ -1,0 +1,22 @@
+extends ../base_template
+block content
+    form( method="POST" action='/articles/add' )
+        div.form-group
+            label(for="category") Kategoria:
+            input#category.form-control(type='text', placeholder='Type Category...' name='category')
+        div.form-group
+            label(for="name") Nazwa:
+            input#name.form-control(type='text', placeholder='Type Name...' name='name')
+        div.form-group
+            label(for="title") Title:
+            input#color.form-control(type='text', placeholder='Type Title...' name='title')
+        div.form-group
+            label(for="priority") Priority:
+            input#price.form-control(type='number',min="0", placeholder='Type Priority...' name='priority')
+        div.form-group
+            label(for="active") Aktywny:
+            input#active.form-control(type='checkbox',checked=true, name='active')
+        div.form-group
+            input(type='submit', value='dodaj')
+
+

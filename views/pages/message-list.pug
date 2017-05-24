@@ -1,0 +1,18 @@
+extends ../base_template
+block content
+    div
+        h1 Lista notyfikacji:
+        if !wiadomosci || !wiadomosci.length
+            div brak notyfikacji!
+        ul.scroll
+            for wiadomosc in wiadomosci
+                li #{wiadomosc.subject}
+                    if(!wiadomosc.readed)
+                        div Address: #{wiadomosc.email}
+                        div Message: #{wiadomosc.message}
+                    div Date: #{new Date(wiadomosc.date.getTime()).toLocaleString()}
+                    div
+                        a(href="/notifications/delete/" + wiadomosc.id) DELETE
+                        br
+                        a(href="/notifications/readed/" + wiadomosc.id ) #{wiadomosc.readed ? "UnRead" : "Read"}
+                    br

@@ -1,0 +1,22 @@
+extends ../base_template
+block content
+    form( method="POST" action='/articles/update/'+produkt.id )
+        div.form-group
+            label(for="category") Kategoria:
+            input#category.form-control(type='text', placeholder='Type Category...' name='category' value=produkt.category)
+        div.form-group
+            label(for="name") Nazwa:
+            input#name.form-control(type='text', placeholder='Type Name...', name='name' value=produkt.name)
+        div.form-group
+            label(for="title") Title:
+            input#color.form-control(type='text', placeholder='Type Title...' name='title' value= produkt.title)
+        div.form-group
+            label(for="content") Content:
+            input#price.form-control(type='number',min="0", placeholder='Type Price...' name='price' value=produkt.price)
+        div.form-group
+            label(for="active") Aktywny:
+            input#active.form-control(type='checkbox',checked=produkt.active, name='active')
+        div.form-group
+            input(type='submit', value='zaktualizuj')
+
+
